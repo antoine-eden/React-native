@@ -1,0 +1,13 @@
+{this.state.tab != undefined ?
+              <View>
+                  <TextInput  onChangeText={text => (this.setState({"city" : text}))} style={{height: 40,backgroundColor: 'azure', fontSize: 20}} placeholder="Changer la ville"/>
+                  <Button title="Valider" onPress={()=> (this.changeCity())} />
+                  <Text h2="true">Ville :  {this.state.tab.city.name}</Text>
+                  <Text h2="true">Pays :  {this.pays[this.state.tab.city.country]}</Text>
+                  <View><Text>Max : {this.kelvin(this.state.tab.list[0].main.temp_max)} °C</Text></View>
+                  <View><Text>Actu : {this.kelvin(this.state.tab.list[0].main.temp)} °C</Text></View>
+                  <View><Text>Min : {this.kelvin(this.state.tab.list[0].main.temp_min)} °C</Text></View>
+            </View>
+                  : <Text>Chargement...</Text>
+
+            }
